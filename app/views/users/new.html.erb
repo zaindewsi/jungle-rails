@@ -1,11 +1,33 @@
 <h1>Sign up for an account</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">
+    <span class="glyphicon glyphicon-user"></span>
+  </span>
+  <%= f.text_field :name, :placeholder => "Name", :class => "form-control" %>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">
+    <span class="glyphicon glyphicon-envelope"></span>
+  </span>
+  <%= f.text_field :email, :placeholder => "Email address", :class =>
+  "form-control" %>
+</div>
 
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">
+    <span class="glyphicon glyphicon-lock"></span>
+  </span>
+  <%= f.password_field :password, :placeholder => "Password", :class =>
+  "form-control" %>
+</div>
+<div class="input-group">
+  <span class="input-group-addon" id="basic-addon1">
+    <span class="glyphicon glyphicon-lock"></span>
+  </span>
+  <%= f.password_field :password_confirmation, :placeholder => "Confirm
+  Password", :class => "form-control" %>
+</div>
 
-<% end %>
+<%= f.submit "Submit", class: 'btn btn-primary' %> <% end %>
